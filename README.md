@@ -17,7 +17,7 @@ Each project combines computational analysis with detailed written explanations 
 | 07 | Auction Theory Simulator | Planned | First-price and second-price auctions |
 | 08 | Cooperative Game Theory Calculator | Planned | Coalitions and the Shapley value |
 
-## Projects
+## Project Descriptions
 
 ### 01 — Prisoner's Dilemma Analyzer
 
