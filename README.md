@@ -34,10 +34,6 @@ The Python program:
 - Compares the equilibrium with the joint-profit-maximizing outcome
 - Explains why individually rational behavior can create a collectively inferior result
 
-Open the project:
-
-[View the Prisoner's Dilemma Analyzer](./01_Prisoners_Dilemma_Analyzer)
-
 ## Repository Goals
 
 This repository is intended to demonstrate:
