@@ -100,22 +100,6 @@ python cournot_competition_analyzer.py --interactive
 
 You can enter the number of firms, demand parameters, marginal costs, fixed costs, and the deviation-test size.
 
-## Generated Analysis
-
-[View the generated example output](./output/Example_Output.md)
-
-## Project Structure
-
-```text
-02_Cournot_Competition_Analyzer/
-│
-├── cournot_competition_analyzer.py
-├── README.md
-├── .gitignore
-└── output/
-    ├── Example_Output.md
-```
-
 ## Concepts Demonstrated
 
 - Cournot competition
