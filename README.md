@@ -147,8 +147,6 @@ This repository demonstrates:
 
 # Author
 
-**Daniel Pineau**
-
-Bachelor of Science in Analytical Economics
+***Daniel Pineau***
 
 Building an open-source collection of educational and analytical game theory tools.
