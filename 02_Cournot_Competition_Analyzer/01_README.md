@@ -111,13 +111,9 @@ You can enter the number of firms, demand parameters, marginal costs, fixed cost
 │
 ├── cournot_competition_analyzer.py
 ├── README.md
-├── requirements.txt
 ├── .gitignore
 └── output/
     ├── Example_Output.md
-    ├── reaction_functions_firms_1_2_holding_firm_3_fixed.png
-    ├── reaction_functions_firms_1_3_holding_firm_2_fixed.png
-    └── reaction_functions_firms_2_3_holding_firm_1_fixed.png
 ```
 
 ## Concepts Demonstrated
