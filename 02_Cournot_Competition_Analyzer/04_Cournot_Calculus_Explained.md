@@ -1,455 +1,458 @@
-# Cournot Competition Calculus Explained
+# Cournot Calculus Explained
 
-This document explains the calculus used in the Cournot Competition Analyzer in clear, step-by-step terms.
-
-The calculus is doing one basic job:
-
-> **Find the production quantity where each firm's profit stops increasing and begins decreasing.**
-
-The example below uses three identical firms.
+This guide explains the mathematics behind the **Cournot Competition Analyzer** in a step-by-step manner. The goal is not simply to solve equations, but to understand **why** each mathematical step is necessary and what it means economically.
 
 ---
 
-## 1. Start with Market Demand
+# 1. The Economic Problem
 
-We assumed:
+Imagine three companies that all produce the exact same product.
 
-\[
-P = 100 - Q
-\]
+Each company must decide **how many units to produce**.
 
-Total output is the combined production of all three firms:
+Unlike perfect competition, every firm's production decision affects the market price.
 
-\[
-Q = q_1 + q_2 + q_3
-\]
+If everyone produces more:
 
-Therefore:
+```text
+Total Supply Increases
+        ↓
+Market Price Falls
+        ↓
+Revenue Per Unit Falls
+```
 
-\[
-P = 100 - q_1 - q_2 - q_3
-\]
+If everyone produces less:
 
-This means that as the firms collectively produce more, the market price falls.
+```text
+Total Supply Decreases
+        ↓
+Market Price Rises
+        ↓
+Revenue Per Unit Increases
+```
 
-For example:
+Every firm therefore faces a tradeoff.
 
-- If total output is 40, price is 60.
-- If total output is 60, price is 40.
-- If total output is 80, price is 20.
+- Producing more increases sales.
+- Producing more also lowers the market price.
+- Producing less keeps prices high but reduces sales.
 
----
-
-## 2. Build Firm 1's Profit Equation
-
-Firm 1's profit is:
-
-\[
-\text{Profit} = \text{Revenue} - \text{Cost}
-\]
-
-Firm 1 produces \(q_1\) units. Its revenue is:
-
-\[
-Pq_1
-\]
-
-Its marginal cost is 20 per unit, so its production cost is:
-
-\[
-20q_1
-\]
-
-Therefore:
-
-\[
-\pi_1 = Pq_1 - 20q_1
-\]
-
-Substitute the market-price equation:
-
-\[
-\pi_1 = (100 - q_1 - q_2 - q_3)q_1 - 20q_1
-\]
-
-This is Firm 1's profit function.
+The objective is to find the quantity that **maximizes profit**, not necessarily the quantity that produces the most units.
 
 ---
 
-## 3. Simplify the Profit Function
+# 2. Building the Profit Function
 
-Distribute \(q_1\):
+Everything begins with the market demand equation.
 
-\[
-\pi_1
-=
-100q_1 - q_1^2 - q_1q_2 - q_1q_3 - 20q_1
-\]
+```text
+P = 100 − Q
+```
 
-Combine \(100q_1 - 20q_1\):
+where
 
-\[
-\pi_1
-=
-80q_1 - q_1^2 - q_1q_2 - q_1q_3
-\]
+```text
+Q = q1 + q2 + q3
+```
 
-In ordinary language:
+Substituting total market output into the demand equation gives
 
-- \(80q_1\) represents the basic gain from selling more units above marginal cost.
-- \(-q_1^2\) captures the price reduction caused by Firm 1's own production.
-- \(-q_1q_2\) and \(-q_1q_3\) capture how rival production lowers the price Firm 1 receives.
+```text
+P = 100 − q1 − q2 − q3
+```
 
-Firm 1 wants to produce more, but not endlessly. Additional production increases sales while also pushing the market price down.
+This tells us that every additional unit produced by any firm lowers the market price.
 
 ---
 
-## 4. Take the First Derivative
+## Revenue
 
-Differentiate Firm 1's profit with respect to \(q_1\):
+Firm 1 sells `q1` units.
 
-\[
-\frac{\partial \pi_1}{\partial q_1}
-=
-80 - 2q_1 - q_2 - q_3
-\]
+Revenue is simply
 
-The derivative tells us:
+```text
+Revenue = Price × Quantity
+```
 
-> **How much Firm 1's profit changes when Firm 1 produces one additional small unit, assuming Firms 2 and 3 do not change their quantities.**
+Therefore,
 
-The partial-derivative symbol \(\partial\) is used because the profit equation contains several variables, but we are changing only \(q_1\).
-
-Each term changes as follows:
-
-\[
-80q_1 \rightarrow 80
-\]
-
-\[
--q_1^2 \rightarrow -2q_1
-\]
-
-\[
--q_1q_2 \rightarrow -q_2
-\]
-
-\[
--q_1q_3 \rightarrow -q_3
-\]
-
-Firm 2's and Firm 3's quantities are treated as fixed numbers while Firm 1 makes its decision.
+```text
+Revenue = P × q1
+```
 
 ---
 
-## 5. Set the Derivative Equal to Zero
+## Costs
 
-We use:
+Suppose Firm 1 has a constant marginal cost of **$20 per unit**.
 
-\[
-80 - 2q_1 - q_2 - q_3 = 0
-\]
+Its production cost is
 
-Why set it equal to zero?
-
-Imagine Firm 1's profit as a hill:
-
-- Before the top, producing slightly more increases profit.
-- At the top, producing slightly more has no immediate benefit.
-- After the top, producing more reduces profit.
-
-The derivative measures the slope of that hill. At the highest point, the slope equals zero.
-
-A positive derivative means:
-
-> Firm 1 should produce more.
-
-A negative derivative means:
-
-> Firm 1 is producing too much and should produce less.
-
-A derivative of zero means:
-
-> Firm 1 is at its profit-maximizing quantity, given its rivals' output.
+```text
+Cost = 20 × q1
+```
 
 ---
 
-## 6. Solve for Firm 1's Best Response
+## Profit
 
-Start with:
+Profit is always
 
-\[
-80 - 2q_1 - q_2 - q_3 = 0
-\]
+```text
+Profit = Revenue − Cost
+```
 
-Move the rival quantities to the other side:
+Substituting everything together gives
 
-\[
-2q_1 = 80 - q_2 - q_3
-\]
+```text
+π1 = Pq1 − 20q1
+```
 
-Divide by 2:
+Replacing **P** with the demand equation gives
 
-\[
-q_1 = \frac{80 - q_2 - q_3}{2}
-\]
+```text
+π1 = (100 − q1 − q2 − q3)q1 − 20q1
+```
 
-This is Firm 1's **reaction function**, also called its **best-response function**.
+Expanding the brackets:
 
-It tells Firm 1 how much to produce for every possible combination of rival output.
-
-Suppose Firms 2 and 3 each produce 20:
-
-\[
-q_1 = \frac{80 - 20 - 20}{2}
-\]
-
-\[
-q_1 = \frac{40}{2} = 20
-\]
-
-When the other firms each produce 20 units, Firm 1's best response is also 20 units.
+```text
+π1 = 80q1 − q1² − q1q2 − q1q3
+```
 
 ---
 
-## 7. Repeat the Process for the Other Firms
+## Economic Interpretation
 
-Because all three firms have the same cost structure, their equations have the same form:
+Each term tells a story.
 
-\[
-q_1 = \frac{80 - q_2 - q_3}{2}
-\]
+```text
+80q1
+```
 
-\[
-q_2 = \frac{80 - q_1 - q_3}{2}
-\]
+The profit generated from selling additional units.
 
-\[
-q_3 = \frac{80 - q_1 - q_2}{2}
-\]
+```text
+−q1²
+```
 
-Each firm's best quantity depends on what the other two firms produce.
+Firm 1 hurts itself by producing too much because increased output lowers the market price.
 
-This creates strategic interdependence:
+```text
+−q1q2
+```
 
-- If rivals produce more, a firm's best response is to produce less.
-- If rivals produce less, a firm's best response is to produce more.
+Firm 2's production hurts Firm 1.
+
+```text
+−q1q3
+```
+
+Firm 3's production also hurts Firm 1.
+
+The profit function therefore captures both **competition** and **market pricing**.
 
 ---
 
-## 8. Solve All Three Equations Together
+# 3. Why We Take the Derivative
 
-Because the firms are identical, we look for a symmetric equilibrium:
+Imagine hiking to the top of a mountain.
 
-\[
-q_1 = q_2 = q_3 = q
-\]
+- If the trail slopes upward, keep walking.
+- If it slopes downward, you've already passed the top.
+- At the very top, the slope is perfectly flat.
 
-Substitute \(q\) for all three firms in one reaction function:
+The derivative measures that slope.
 
-\[
-q = \frac{80 - q - q}{2}
-\]
+In economics, the "mountain" is the firm's profit curve.
 
-Combine the two rival quantities:
+The derivative tells us
 
-\[
-q = \frac{80 - 2q}{2}
-\]
+> **If Firm 1 produces one more unit, how will its profit change?**
 
-Multiply both sides by 2:
+Taking the derivative gives
 
-\[
-2q = 80 - 2q
-\]
+```text
+∂π1/∂q1 = 80 − 2q1 − q2 − q3
+```
 
-Add \(2q\) to both sides:
+Notice how every term changes.
 
-\[
+```text
+80q1      → 80
+
+−q1²      → −2q1
+
+−q1q2     → −q2
+
+−q1q3     → −q3
+```
+
+While taking the derivative, Firms 2 and 3 are treated as fixed.
+
+Only Firm 1 is making a decision.
+
+---
+
+# 4. Finding the Profit-Maximizing Output
+
+Once we know the slope of the profit curve, we simply find where that slope equals zero.
+
+```text
+80 − 2q1 − q2 − q3 = 0
+```
+
+Why zero?
+
+Because
+
+```text
+Positive slope
+```
+
+means
+
+```text
+Producing more increases profit.
+```
+
+while
+
+```text
+Negative slope
+```
+
+means
+
+```text
+Producing more decreases profit.
+```
+
+The maximum occurs exactly where the slope changes from positive to negative.
+
+That is why economists solve
+
+```text
+Derivative = 0
+```
+
+---
+
+# 5. Building the Reaction Function
+
+Now solve the previous equation for Firm 1's output.
+
+Start with
+
+```text
+80 − 2q1 − q2 − q3 = 0
+```
+
+Move the rival quantities.
+
+```text
+2q1 = 80 − q2 − q3
+```
+
+Divide both sides by two.
+
+```text
+q1 = (80 − q2 − q3)/2
+```
+
+This equation is Firm 1's **reaction function**.
+
+It tells Firm 1 exactly how much it should produce after observing what its competitors produce.
+
+Applying the exact same process to the other firms gives
+
+```text
+q2 = (80 − q1 − q3)/2
+
+q3 = (80 − q1 − q2)/2
+```
+
+Each firm now has its own best-response equation.
+
+---
+
+# 6. Solving the Nash Equilibrium
+
+Because every firm is identical, we assume
+
+```text
+q1 = q2 = q3 = q
+```
+
+Substitute this into Firm 1's reaction function.
+
+```text
+q = (80 − q − q)/2
+```
+
+Simplify.
+
+```text
+q = (80 − 2q)/2
+```
+
+Multiply both sides by two.
+
+```text
+2q = 80 − 2q
+```
+
+Move all the quantities to one side.
+
+```text
 4q = 80
-\]
+```
 
-Divide by 4:
+Finally,
 
-\[
+```text
 q = 20
-\]
+```
 
-Therefore:
+Therefore,
 
-\[
-q_1 = q_2 = q_3 = 20
-\]
+```text
+q1 = 20
 
----
+q2 = 20
 
-## 9. Calculate Total Output and Price
+q3 = 20
+```
 
-Total output is:
+Now compute market output.
 
-\[
+```text
 Q = 20 + 20 + 20 = 60
-\]
+```
 
-Market price is:
+Price becomes
 
-\[
-P = 100 - 60 = 40
-\]
+```text
+P = 100 − 60 = 40
+```
 
-Each firm sells 20 units at a price of 40 and has a marginal cost of 20.
+Each firm's profit becomes
 
-Profit per firm is:
+```text
+Profit = (40 − 20) × 20
 
-\[
-\pi_i = (40 - 20)(20)
-\]
-
-\[
-\pi_i = 400
-\]
-
-| Measure | Result |
-|---|---:|
-| Firm 1 output | 20 |
-| Firm 2 output | 20 |
-| Firm 3 output | 20 |
-| Total output | 60 |
-| Market price | 40 |
-| Profit per firm | 400 |
+Profit = 400
+```
 
 ---
 
-## 10. Check the Second Derivative
+## Economic Interpretation
 
-The first derivative identifies a point where the slope equals zero. However, that point could theoretically be a maximum or a minimum.
+Every firm produces exactly 20 units.
 
-Differentiate the first derivative again:
+Nobody wants to produce more.
 
-\[
-\frac{\partial^2\pi_1}{\partial q_1^2} = -2
-\]
+Nobody wants to produce less.
 
-The second derivative is negative.
-
-That means Firm 1's profit curve bends downward, like an upside-down bowl. Therefore, the stationary point is the top of the curve—a profit maximum.
-
-A useful rule is:
-
-- Positive second derivative: the curve bends upward and the point is likely a minimum.
-- Negative second derivative: the curve bends downward and the point is likely a maximum.
-
-The value \(-2\) confirms that the quantity of 20 maximizes profit.
+Each firm is already making its best possible decision given what the others are doing.
 
 ---
 
-## 11. Verify the Nash Equilibrium
+# 7. Why the Second Derivative Matters
 
-At the proposed equilibrium:
+Finding where the first derivative equals zero does **not** automatically guarantee maximum profit.
 
-\[
-q_1 = q_2 = q_3 = 20
-\]
+It could also be
 
-Check Firm 1:
+- a minimum,
+- or a flat turning point.
 
-\[
-q_1 = \frac{80 - 20 - 20}{2} = 20
-\]
+We therefore take another derivative.
 
-Check Firm 2:
+```text
+∂²π1/∂q1² = −2
+```
 
-\[
-q_2 = \frac{80 - 20 - 20}{2} = 20
-\]
+Because this number is negative, the curve bends downward.
 
-Check Firm 3:
+```text
+          Profit
 
-\[
-q_3 = \frac{80 - 20 - 20}{2} = 20
-\]
+             ▲
+             │
+         ● Maximum
+        / \
+       /   \
+______/_____\________► Output
+```
 
-Every firm is choosing its best response to the other firms.
+Therefore,
 
-That is why this is a **Cournot-Nash equilibrium**:
-
-> No firm can increase its profit by changing its own output alone while the other two firms continue producing 20 units.
-
----
-
-## 12. Test a Small Deviation
-
-Firm 1 earns 400 at 20 units.
-
-Suppose Firm 1 increases production to 21 while Firms 2 and 3 remain at 20.
-
-Total output becomes:
-
-\[
-Q = 21 + 20 + 20 = 61
-\]
-
-Price becomes:
-
-\[
-P = 100 - 61 = 39
-\]
-
-Firm 1's profit becomes:
-
-\[
-\pi_1 = (39 - 20)(21) = 399
-\]
-
-Its profit falls from 400 to 399.
-
-Now suppose Firm 1 decreases output to 19:
-
-\[
-Q = 19 + 20 + 20 = 59
-\]
-
-\[
-P = 100 - 59 = 41
-\]
-
-\[
-\pi_1 = (41 - 20)(19) = 399
-\]
-
-Again, profit falls to 399.
-
-| Firm 1 quantity | Profit |
-|---:|---:|
-| 19 | 399 |
-| **20** | **400** |
-| 21 | 399 |
-
-This gives a concrete interpretation of the calculus. The derivative found the exact center of the profit peak.
+the solution is a **maximum**, not a minimum.
 
 ---
 
-## What the Python Script Is Doing
+# 8. Verifying the Equilibrium
 
-SymPy performs these steps automatically for every firm.
+Now plug the equilibrium quantities back into each firm's reaction function.
 
-First, the script constructs the profit equation:
+Firm 1
+
+```text
+q1 = (80 − 20 − 20)/2
+
+q1 = 20
+```
+
+Firm 2
+
+```text
+q2 = (80 − 20 − 20)/2
+
+q2 = 20
+```
+
+Firm 3
+
+```text
+q3 = (80 − 20 − 20)/2
+
+q3 = 20
+```
+
+Every firm's chosen quantity equals its own best response.
+
+That is exactly what defines a **Cournot-Nash Equilibrium**.
+
+No single firm can increase profit by changing its output while every other firm keeps producing 20 units.
+
+---
+
+# 9. How the Python Script Does This Automatically
+
+The analyzer performs exactly the same mathematics symbolically.
+
+### Step 1
+
+Construct the profit function.
 
 ```python
 profit = (price - marginal_cost) * quantity - fixed_cost
 ```
 
-Then it calculates the first derivative:
+### Step 2
+
+Differentiate profit.
 
 ```python
 first_derivative = sp.diff(profit, quantity)
 ```
 
-This asks:
+### Step 3
 
-> How does profit change when this firm changes its own output?
-
-Next, it solves the first-order condition:
+Find the quantity where the derivative equals zero.
 
 ```python
 reaction_function = sp.solve(
@@ -458,34 +461,53 @@ reaction_function = sp.solve(
 )
 ```
 
-This asks:
+### Step 4
 
-> What quantity makes the change in profit equal to zero?
-
-Finally, it calculates the second derivative:
+Verify that the solution is actually a maximum.
 
 ```python
 second_derivative = sp.diff(first_derivative, quantity)
 ```
 
-This checks:
+### Step 5
 
-> Is the calculated point the top of the profit curve?
+Solve every firm's reaction function simultaneously.
+
+The resulting solution is the **Cournot-Nash Equilibrium**.
+
+The analyzer then
+
+- computes profits,
+- verifies best responses,
+- performs deviation tests,
+- compares monopoly and competitive outcomes,
+- generates reaction-function graphs,
+- exports a complete Markdown report.
 
 ---
 
-## Overall Summary
+# 10. Key Takeaways
 
-The script:
+The Cournot model teaches several important ideas.
 
-1. Creates each firm's profit equation.
-2. Differentiates profit to measure the benefit of producing slightly more.
-3. Finds where that benefit reaches zero.
-4. Confirms that the result is a profit maximum.
-5. Solves all firms' reaction functions together.
-6. Verifies that every firm is choosing a best response.
-7. Confirms that no firm benefits from changing output alone.
+✅ Firms compete by choosing **quantities**, not prices.
 
-In one sentence:
+✅ Every firm's production affects the market price.
 
-> The calculus finds each firm's profit-maximizing output, and solving those decisions together produces the Cournot-Nash equilibrium.
+✅ Calculus identifies the quantity that maximizes profit.
+
+✅ The first derivative finds the optimal quantity.
+
+✅ The second derivative confirms it is a maximum.
+
+✅ A reaction function describes a firm's best response.
+
+✅ Solving every reaction function together produces the **Cournot-Nash Equilibrium**.
+
+---
+
+# Final Summary
+
+The entire Cournot model can be summarized in one sentence:
+
+> **Each firm chooses the production quantity that maximizes its own profit given what every other firm produces. When every firm is simultaneously choosing its best response, the market reaches a Cournot-Nash Equilibrium.**
