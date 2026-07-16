@@ -156,13 +156,3 @@ Each firm is tested at **±1.00 unit(s)** from equilibrium.
 A Cournot firm faces a tradeoff. Producing more creates additional sales, but it also increases total market output and lowers the market price on every unit the firm sells. The reaction function gives the quantity that best balances those effects for each possible level of rival output.
 
 At equilibrium, all reaction functions are satisfied simultaneously. The outcome is stable against unilateral deviations even though a coordinated industry might prefer the lower-output monopoly benchmark.
-
-## 9. Visualizations
-
-With three firms, the reaction functions occupy three-dimensional strategy space. These charts show pairwise conditional reaction functions while holding the third firm at its equilibrium quantity.
-
-![Firms 1 and 2](./reaction_functions_firms_1_2_holding_firm_3_fixed.png)
-
-![Firms 1 and 3](./reaction_functions_firms_1_3_holding_firm_2_fixed.png)
-
-![Firms 2 and 3](./reaction_functions_firms_2_3_holding_firm_1_fixed.png)
