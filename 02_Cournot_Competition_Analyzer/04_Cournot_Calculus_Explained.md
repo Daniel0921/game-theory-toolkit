@@ -364,18 +364,77 @@ Each firm is already making its best possible decision given what the others are
 
 Finding where the first derivative equals zero does **not** automatically guarantee maximum profit.
 
-It could also be
+A point where the first derivative equals zero could be:
 
+- a maximum,
 - a minimum,
 - or a flat turning point.
 
-We therefore take another derivative.
+To determine **which one we have**, we take the derivative **one more time**.
+
+Recall that the first derivative was
+
+```text
+∂π1/∂q1 = 80 − 2q1 − q2 − q3
+```
+
+Now differentiate this equation with respect to `q1`.
+
+### Step 1
+
+Take the derivative of each term individually.
+
+```text
+80        → 0
+```
+
+The derivative of a constant is always zero.
+
+```text
+−2q1      → −2
+```
+
+The derivative of `−2q1` is simply `−2`.
+
+```text
+−q2       → 0
+```
+
+Since Firm 2's output is treated as a constant while Firm 1 changes its own production, its derivative is zero.
+
+```text
+−q3       → 0
+```
+
+Firm 3's output is also treated as a constant, so its derivative is zero as well.
+
+### Step 2
+
+Combine the results.
+
+```text
+∂²π1/∂q1² = 0 − 2 − 0 − 0
+```
+
+Simplify.
 
 ```text
 ∂²π1/∂q1² = −2
 ```
 
-Because this number is negative, the curve bends downward.
+---
+
+## What Does This Mean?
+
+The second derivative tells us the **shape of the profit curve**.
+
+Because
+
+```text
+−2 < 0
+```
+
+the profit curve bends downward.
 
 ```text
           Profit
@@ -388,9 +447,23 @@ Because this number is negative, the curve bends downward.
 ______/_____\________► Output
 ```
 
-Therefore,
+A downward-bending curve is called **concave**.
 
-the solution is a **maximum**, not a minimum.
+This means that as Firm 1 produces more output, the additional profit from producing one more unit gradually decreases until it eventually becomes negative.
+
+Since the curve is concave, the point where the first derivative equals zero must be the **highest point on the curve**.
+
+Therefore, the solution we found is a **maximum**, not a minimum.
+
+---
+
+### Economic Interpretation
+
+The first derivative tells us **where the profit curve becomes flat**.
+
+The second derivative tells us **whether that flat point is the top or the bottom of the curve**.
+
+Because the second derivative equals **−2**, we know Firm 1's profit function is always concave. This confirms that the quantity calculated from the first-order condition is the **profit-maximizing output**.
 
 ---
 
